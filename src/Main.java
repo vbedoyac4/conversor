@@ -12,7 +12,7 @@ public class Main {
             System.out.println("Ingrese el país de la moneda original:");
             String de = scanner.nextLine();
             de = darFormato(de);
-            String existePais = DiccinarioMonedas.currencyMap.get(de);
+            String existePais = DiccionarioMonedas.currencyMap.get(de);
 
 
             while (existePais == null) {
@@ -23,7 +23,7 @@ public class Main {
                     break;
                 }
                 de = darFormato(de);
-                existePais = DiccinarioMonedas.currencyMap.get(de);
+                existePais = DiccionarioMonedas.currencyMap.get(de);
             }
 
             if (terminar) break;
@@ -35,7 +35,7 @@ public class Main {
             System.out.println("Ingrese el país de la moneda a cambiar en Ingles:");
             String a = scanner.nextLine();
             a = darFormato(a);
-            String existePaisA = DiccinarioMonedas.currencyMap.get(a);
+            String existePaisA = DiccionarioMonedas.currencyMap.get(a);
 
             while (existePaisA == null) {
                 System.out.println("El país no existe en la lista disponible. Ingrese otro o escriba X para terminar:");
@@ -45,7 +45,7 @@ public class Main {
                     break;
                 }
                 a = darFormato(a);
-                existePaisA = DiccinarioMonedas.currencyMap.get(a);
+                existePaisA = DiccionarioMonedas.currencyMap.get(a);
             }
 
             if (terminar) break;
@@ -53,7 +53,7 @@ public class Main {
             if (existePais != null && existePaisA != null) {
                 double tasa = ConsultarTasa.buscarTasadeCambio(existePais, existePaisA);
                 double montoNuevaMoneda = tasa * cantidad;
-                System.out.println("La cantidad " + cantidad + " equivale a " + montoNuevaMoneda + " " + existePaisA);
+                System.out.println("La cantidad " + cantidad +" " + existePais + " equivale a " + montoNuevaMoneda + " " + existePaisA);
             }
         }
     }
